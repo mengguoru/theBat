@@ -12,7 +12,7 @@ public class bat : MonoBehaviour {
     public float flightForce;
 	// Use this for initialization
 	void Start () {
-	
+        theBat = this.gameObject;
 	}
 	
 	// Update is called once per frame

@@ -88,8 +88,9 @@ namespace UnityStandardAssets.CrossPlatformInput
 				delta = Mathf.Clamp(delta, -MovementRange, MovementRange);
 				newPos.y = delta;
 			}
-			transform.position = new Vector3(m_StartPos.x + newPos.x, m_StartPos.y + newPos.y, m_StartPos.z + newPos.z);
-			UpdateVirtualAxes(transform.position);
+            //transform.position = new Vector3(m_StartPos.x + newPos.x, m_StartPos.y + newPos.y, m_StartPos.z + newPos.z); // DCuRRy
+            transform.position = Vector3.ClampMagnitude(newPos, MovementRange) + m_StartPos;
+            UpdateVirtualAxes(transform.position);
 		}
 
 

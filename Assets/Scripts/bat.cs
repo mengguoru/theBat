@@ -17,10 +17,12 @@ public class bat : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float hori = CrossPlatformInputManager.GetAxis("Horizontal") * speed * Time.deltaTime;
-        //Debug.Log(hori);
-        float veri = CrossPlatformInputManager.GetAxis("Vertical") * speed * Time.deltaTime;
-        transform.Translate(hori, veri, flightForce*Time.deltaTime);
+        float hori = CrossPlatformInputManager.GetAxis("Horizontal");
+        float veri = CrossPlatformInputManager.GetAxis("Vertical");
+        Vector3 flightOffset = new Vector3(hori * speed * Time.deltaTime, veri *speed * Time.deltaTime, flightForce * Time.deltaTime);
+        //transform.Translate(hori, veri, flightForce*Time.deltaTime);
+        transform.position += flightOffset;
+        Debug.Log(hori + ":"+veri);
         //theBat.transform.Rotate(hori* rotateSpeed, veri*rotateSpeed, 0);
         //theBat.transform.Rotate(hori * rotateSpeed * Time.deltaTime, veri * rotateSpeed * Time.deltaTime, 0);
     }

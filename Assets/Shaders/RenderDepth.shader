@@ -56,5 +56,5 @@ Shader "Custom/RenderDepth"
              
              ENDCG
          }
-     } 
+     }
  }

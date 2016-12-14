@@ -3,6 +3,8 @@
 		_MainTex ("", 2D) = "white" {}
 		_CenterX("Center X",Float) = 0.5
 		_CenterY("Center Y",Float) = 0.5
+		_Radius("radius",Float) = 1
+		_WaveWidth("wave width", Float) = 0.01
 		_DisappearRate("disappear rate",Float) = 35
 	}
 	SubShader {

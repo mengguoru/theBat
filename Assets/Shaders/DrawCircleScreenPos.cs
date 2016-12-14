@@ -16,6 +16,7 @@ public class DrawCircleScreenPos : MonoBehaviour {
 
 	void Start () {
         cam = this.GetComponent<Camera>();
+        GetComponent<Camera>().depthTextureMode = DepthTextureMode.Depth;
         screenPos = cam.WorldToViewportPoint(target.position);
 
         mat.SetFloat("_CenterX", screenPos.x);
